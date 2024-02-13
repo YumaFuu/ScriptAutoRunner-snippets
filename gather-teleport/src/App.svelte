@@ -29,13 +29,15 @@ const teleport = ({ x, y }) => {
   const mapId = window.game.getMyPlayer().map;
   window.game.teleport(mapId, x, y);
 };
+const style = document.createElement('style');
+style.textContent = ".moveable-line { display: none; }";
+document.head.appendChild(style);
 </script>
 
 <div style="z-index: 1;">
   <div>
     <div
       style="
-        margin-top: 10px;
         position: absolute;
         width: 300px;
         text-align: center;
@@ -68,6 +70,7 @@ const teleport = ({ x, y }) => {
     <Moveable
       origin={false}
       target={targetRef}
+      className="moveable"
       draggable={true}
       throttleDrag={1}
       edgeDraggable={false}
