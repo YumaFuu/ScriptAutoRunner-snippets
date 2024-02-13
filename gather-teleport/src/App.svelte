@@ -32,7 +32,7 @@ const teleport = ({ x, y }) => {
 </script>
 
 <div style="z-index: 1;">
-  <div style="margin-top: 50px;">
+  <div>
     <div
       style="
         margin-top: 10px;
