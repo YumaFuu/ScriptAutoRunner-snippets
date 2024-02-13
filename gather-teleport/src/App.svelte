@@ -31,16 +31,26 @@ const teleport = ({ x, y }) => {
 };
 </script>
 
-<div class="root">
-  <div class="container">
-    <div class="target" bind:this={targetRef} >
+<div style="z-index: 1;">
+  <div style="margin-top: 50px;">
+    <div
+      style="
+        margin-top: 10px;
+        position: absolute;
+        width: 300px;
+        text-align: center;
+        box-sizing: border-box;
+        background-color: rgba(51, 51, 51, 0.4);
+        color: #333;
+        border: 1px solid #000000;"
+      bind:this={targetRef}
+    >
       {#each list as row}
         <div style="display: flex;">
           {#each row as [name, x, y] }
             <button
-              class="teleport-btn"
-              style="flex-grow: 1; "
-              on:click={() => { teleport({ x, y }) }}
+              style="flex-grow: 1; font: inherit;"
+              on:click={() => {teleport({ x, y })} }
             >
               {name}
             </button>
@@ -63,33 +73,3 @@ const teleport = ({ x, y }) => {
     />
   </div>
 </div>
-
-<style>
-  .root {
-    z-index: 1;
-  }
-
-  .container {
-    margin-top: 50px;
-  }
-
-  .target {
-    margin-top: 10px;
-    position: absolute;
-    width: 300px;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: rgba(51, 51, 51, 0.4);
-    color: #333;
-    border: 1px solid #000000;
-  }
-
-  .teleport-btn {
-    font: inherit;
-  }
-
-  .teleport-btn:focus, .teleport-btn:hover {
-    outline-color: rgb(255, 0, 0);
-    background: #f0f0f0;
-}
-</style>
