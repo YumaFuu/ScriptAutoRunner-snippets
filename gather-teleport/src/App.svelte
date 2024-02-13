@@ -40,16 +40,22 @@ const teleport = ({ x, y }) => {
         width: 300px;
         text-align: center;
         box-sizing: border-box;
-        background-color: rgba(51, 51, 51, 0.4);
-        color: #333;
-        border: 1px solid #000000;"
+        background-color: rgba(32,37,64, 0.4);
+        border: 1px solid #202540;
+      "
       bind:this={targetRef}
     >
       {#each list as row}
         <div style="display: flex;">
           {#each row as [name, x, y] }
             <button
-              style="flex-grow: 1; font: inherit;"
+              style="
+                flex-grow: 1;
+                font: inherit;
+                background-color: rgba(32,37,64, 0.9);
+                color: white;
+                font-family: 'DM Sans', sans-serif;
+              "
               on:click={() => {teleport({ x, y })} }
             >
               {name}
