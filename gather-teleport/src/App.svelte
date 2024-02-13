@@ -66,6 +66,7 @@ const teleport = ({ x, y }) => {
 
 <style>
   .root {
+    z-index: 1;
   }
 
   .container {
